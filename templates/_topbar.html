@@ -1,0 +1,9 @@
+<div class="topbar">
+  <h5 class="mb-0 fw-bold">{{ page_title|default('Dashboard') }}</h5>
+  <div class="d-flex align-items-center gap-2">
+    <span class="text-muted d-none d-md-inline">Hi, {{ full_name|default('there') }} 👋</span>
+    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;">
+      {{ (full_name|default('U'))[0]|upper }}
+    </div>
+  </div>
+</div>

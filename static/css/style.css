@@ -1,0 +1,338 @@
+/* ============================================================
+   AI-Powered Smart Expense Analyzer — Main Stylesheet
+   ============================================================ */
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --primary-light: #eef2ff;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #d97706;
+  --info: #0891b2;
+  --dark: #1e293b;
+  --gray: #64748b;
+  --gray-light: #f1f5f9;
+  --border-color: #e2e8f0;
+  --sidebar-width: 260px;
+  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f8fafc;
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ---------- Landing Page ---------- */
+.landing-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+  color: white;
+  padding: 100px 0 120px;
+}
+
+.landing-hero h1 {
+  font-weight: 800;
+  font-size: 2.75rem;
+}
+
+.landing-hero .btn-light {
+  font-weight: 600;
+}
+
+.feature-card {
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 32px 24px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.12);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.section-label {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* ---------- Auth Pages ---------- */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+}
+
+.auth-card {
+  max-width: 440px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  padding: 40px;
+}
+
+.auth-card .brand {
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+/* ---------- App Shell (Sidebar + Topbar) ---------- */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--dark);
+  color: #cbd5e1;
+  flex-shrink: 0;
+  min-height: 100vh;
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar .brand {
+  color: white;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 0 24px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 12px;
+}
+
+.sidebar-nav a {
+  color: #cbd5e1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.sidebar-nav a.active {
+  background: var(--primary);
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar {
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-body {
+  padding: 32px;
+}
+
+/* ---------- Cards ---------- */
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  height: 100%;
+}
+
+.stat-card .stat-label {
+  color: var(--gray);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-card .stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.stat-card .stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 24px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* ---------- Tables ---------- */
+.table-expenses thead {
+  background: var(--gray-light);
+}
+
+.category-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* ---------- Empty States ---------- */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray);
+}
+
+.empty-state i {
+  font-size: 3rem;
+  color: var(--border-color);
+  margin-bottom: 16px;
+}
+
+/* ---------- Toasts ---------- */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+
+/* ---------- AI Insights ---------- */
+.ai-card {
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.ai-disclaimer {
+  font-size: 0.8rem;
+  color: var(--gray);
+  border-top: 1px dashed var(--border-color);
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.chat-window {
+  height: 420px;
+  overflow-y: auto;
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.chat-bubble {
+  max-width: 75%;
+  padding: 10px 16px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.chat-bubble.user {
+  background: var(--primary);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.ai {
+  background: white;
+  border: 1px solid var(--border-color);
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+/* ---------- Loading Spinner ---------- */
+.loading-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--gray);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .app-shell {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .page-body {
+    padding: 20px;
+  }
+}

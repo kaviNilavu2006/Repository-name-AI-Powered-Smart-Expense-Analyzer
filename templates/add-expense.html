@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Expense — Smart Expense Analyzer</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="app-shell">
+  {% set active_page = 'add-expense' %}
+  {% include "_sidebar.html" %}
+
+  <div class="main-content">
+    {% set page_title = 'Add Expense' %}
+    {% include "_topbar.html" %}
+
+    <div class="page-body">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="chart-card">
+            <h5 class="fw-bold mb-4" id="form-title">Add New Expense</h5>
+
+            <form id="expense-form" enctype="multipart/form-data">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Amount (₹)</label>
+                  <input type="number" step="0.01" min="0.01" class="form-control" id="amount" name="amount" placeholder="500" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Category</label>
+                  <select class="form-select" id="category" name="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Shopping</option>
+                    <option>Bills</option>
+                    <option>Entertainment</option>
+                    <option>Education</option>
+                    <option>Health</option>
+                    <option>Travel</option>
+                    <option>Rent</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Description</label>
+                  <input type="text" class="form-control" id="description" name="description" placeholder="e.g. Lunch">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Payment Method</label>
+                  <select class="form-select" id="payment_method" name="payment_method" required>
+                    <option value="" disabled selected>Select method</option>
+                    <option>Cash</option>
+                    <option>UPI</option>
+                    <option>Debit Card</option>
+                    <option>Credit Card</option>
+                    <option>Bank Transfer</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Receipt (optional)</label>
+                  <input type="file" class="form-control" id="receipt" name="receipt" accept=".jpg,.jpeg,.png,.pdf">
+                  <div class="form-text">JPG, JPEG, PNG, or PDF. Maximum size 5 MB.</div>
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 mt-4">
+                <button type="submit" class="btn btn-primary px-4">
+                  <span id="submit-btn-text">Add Expense</span>
+                </button>
+                <a href="/expenses" class="btn btn-outline-secondary px-4">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+<script src="{{ url_for('static', filename='js/expenses.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Smart Expense Analyzer</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="app-shell">
+  {% set active_page = 'dashboard' %}
+  {% include "_sidebar.html" %}
+
+  <div class="main-content">
+    {% set page_title = 'Dashboard' %}
+    {% include "_topbar.html" %}
+
+    <div class="page-body">
+      <div class="row g-4 mb-4">
+        <div class="col-md-3 col-6">
+          <div class="stat-card d-flex justify-content-between align-items-start">
+            <div>
+              <div class="stat-label">Total Expenses</div>
+              <div class="stat-value" id="stat-total">₹0.00</div>
+            </div>
+            <div class="stat-icon" style="background:#eef2ff;color:#4f46e5;"><i class="bi bi-wallet2"></i></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card d-flex justify-content-between align-items-start">
+            <div>
+              <div class="stat-label">This Month</div>
+              <div class="stat-value" id="stat-month">₹0.00</div>
+            </div>
+            <div class="stat-icon" style="background:#ecfdf5;color:#16a34a;"><i class="bi bi-calendar-month"></i></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card d-flex justify-content-between align-items-start">
+            <div>
+              <div class="stat-label">Top Category</div>
+              <div class="stat-value" id="stat-top-category">—</div>
+            </div>
+            <div class="stat-icon" style="background:#fff7ed;color:#d97706;"><i class="bi bi-tags"></i></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card d-flex justify-content-between align-items-start">
+            <div>
+              <div class="stat-label">Transactions</div>
+              <div class="stat-value" id="stat-transactions">0</div>
+            </div>
+            <div class="stat-icon" style="background:#f0f9ff;color:#0891b2;"><i class="bi bi-list-check"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h6 class="fw-bold mb-3">Expense by Category</h6>
+            <canvas id="categoryChart" height="220"></canvas>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h6 class="fw-bold mb-3">Payment Method Breakdown</h6>
+            <canvas id="paymentChart" height="220"></canvas>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h6 class="fw-bold mb-3">Monthly Expenses</h6>
+            <canvas id="monthlyChart" height="220"></canvas>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="chart-card">
+            <h6 class="fw-bold mb-3">Daily Expenses</h6>
+            <canvas id="dailyChart" height="220"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="/add-expense" class="btn btn-primary btn-lg"><i class="bi bi-plus-circle"></i> Add New Expense</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.3/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

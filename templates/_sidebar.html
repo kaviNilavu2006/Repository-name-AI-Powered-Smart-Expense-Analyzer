@@ -1,0 +1,12 @@
+<div class="sidebar">
+  <div class="brand"><i class="bi bi-wallet2"></i> Expense Analyzer</div>
+  <nav class="sidebar-nav">
+    <a href="/dashboard" class="{{ 'active' if active_page == 'dashboard' else '' }}"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a href="/expenses" class="{{ 'active' if active_page == 'expenses' else '' }}"><i class="bi bi-receipt"></i> Expenses</a>
+    <a href="/add-expense" class="{{ 'active' if active_page == 'add-expense' else '' }}"><i class="bi bi-plus-circle"></i> Add Expense</a>
+    <a href="/analytics" class="{{ 'active' if active_page == 'analytics' else '' }}"><i class="bi bi-bar-chart"></i> Analytics</a>
+    <a href="/ai-insights" class="{{ 'active' if active_page == 'ai-insights' else '' }}"><i class="bi bi-robot"></i> AI Insights</a>
+    <a href="/profile" class="{{ 'active' if active_page == 'profile' else '' }}"><i class="bi bi-person-circle"></i> Profile</a>
+    <a href="#" class="logout-btn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+  </nav>
+</div>

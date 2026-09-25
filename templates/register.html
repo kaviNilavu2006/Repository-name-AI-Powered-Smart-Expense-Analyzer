@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — Smart Expense Analyzer</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="text-center mb-4">
+      <div class="brand"><i class="bi bi-wallet2"></i> Smart Expense Analyzer</div>
+      <p class="text-muted mb-0">Create your free account</p>
+    </div>
+
+    <form id="register-form">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="full_name" required placeholder="Jane Doe">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required placeholder="you@example.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required placeholder="At least 6 characters">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm_password" required placeholder="Re-enter password">
+      </div>
+      <button type="submit" class="btn btn-primary w-100 py-2">Create Account</button>
+    </form>
+
+    <p class="text-center text-muted mt-4 mb-0">
+      Already have an account? <a href="/login">Login here</a>
+    </p>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

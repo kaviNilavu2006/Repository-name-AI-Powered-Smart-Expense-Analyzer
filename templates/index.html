@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Powered Smart Expense Analyzer</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/"><i class="bi bi-wallet2 text-primary"></i> Smart Expense Analyzer</a>
+    <div class="d-flex gap-2">
+      <a href="/login" class="btn btn-outline-primary">Login</a>
+      <a href="/register" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="landing-hero text-center">
+  <div class="container">
+    <h1 class="mb-3">AI-Powered Smart Expense Analyzer</h1>
+    <p class="lead mb-4">Track your expenses, understand your spending, and get AI-powered insights.</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="/register" class="btn btn-light btn-lg px-4">Get Started</a>
+      <a href="/login" class="btn btn-outline-light btn-lg px-4">Login</a>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 mt-4">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">Features</div>
+      <h2 class="fw-bold">Everything you need to manage spending</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="bi bi-receipt-cutoff"></i></div>
+          <h5 class="fw-bold">Expense Tracking</h5>
+          <p class="text-muted mb-0">Add, categorize, edit, and delete expenses with receipt uploads in seconds.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h5 class="fw-bold">Visual Dashboards</h5>
+          <p class="text-muted mb-0">Interactive charts show category breakdowns, monthly trends, and daily spending.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="bi bi-robot"></i></div>
+          <h5 class="fw-bold">AI Insights</h5>
+          <p class="text-muted mb-0">Amazon Bedrock analyzes your spending and generates personalized recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">How It Works</div>
+      <h2 class="fw-bold">Three simple steps</h2>
+    </div>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="feature-icon mx-auto">1</div>
+        <h6 class="fw-bold mt-3">Create your account</h6>
+        <p class="text-muted">Register securely in under a minute.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-icon mx-auto">2</div>
+        <h6 class="fw-bold mt-3">Log your expenses</h6>
+        <p class="text-muted">Add expenses and upload receipts on the go.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-icon mx-auto">3</div>
+        <h6 class="fw-bold mt-3">Get AI insights</h6>
+        <p class="text-muted">Receive smart budgeting tips based on your habits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">Cloud Architecture</div>
+      <h2 class="fw-bold">Built on AWS</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon mx-auto"><i class="bi bi-hdd-rack"></i></div>
+          <h6 class="fw-bold mt-2">DynamoDB</h6>
+          <p class="text-muted small mb-0">Expense &amp; user data</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon mx-auto"><i class="bi bi-cloud-arrow-up"></i></div>
+          <h6 class="fw-bold mt-2">Amazon S3</h6>
+          <p class="text-muted small mb-0">Secure receipt storage</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon mx-auto"><i class="bi bi-cpu"></i></div>
+          <h6 class="fw-bold mt-2">Amazon Bedrock</h6>
+          <p class="text-muted small mb-0">AI-powered analysis</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="feature-card text-center">
+          <div class="feature-icon mx-auto"><i class="bi bi-shield-lock"></i></div>
+          <h6 class="fw-bold mt-2">IAM + Beanstalk</h6>
+          <p class="text-muted small mb-0">Secure hosting</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-white text-center py-4 mt-4">
+  <p class="mb-0">&copy; 2026 AI-Powered Smart Expense Analyzer — College Cloud Computing Project</p>
+</footer>
+
+<div id="toast-container"></div>
+</body>
+</html>

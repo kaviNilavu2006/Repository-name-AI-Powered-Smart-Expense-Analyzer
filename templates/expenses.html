@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expenses — Smart Expense Analyzer</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="app-shell">
+  {% set active_page = 'expenses' %}
+  {% include "_sidebar.html" %}
+
+  <div class="main-content">
+    {% set page_title = 'Expenses' %}
+    {% include "_topbar.html" %}
+
+    <div class="page-body">
+      <div class="chart-card mb-4">
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label class="form-label small text-muted">Search</label>
+            <input type="text" class="form-control" id="filter-search" placeholder="Search description...">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label small text-muted">Category</label>
+            <select class="form-select" id="filter-category">
+              <option value="">All</option>
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Shopping</option>
+              <option>Bills</option>
+              <option>Entertainment</option>
+              <option>Education</option>
+              <option>Health</option>
+              <option>Travel</option>
+              <option>Rent</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label class="form-label small text-muted">From</label>
+            <input type="date" class="form-control" id="filter-date-from">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label small text-muted">To</label>
+            <input type="date" class="form-control" id="filter-date-to">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small text-muted">Sort By</label>
+            <select class="form-select" id="filter-sort-by">
+              <option value="date">Date (Newest First)</option>
+              <option value="amount">Amount (Highest First)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="fw-bold mb-0">All Expenses</h5>
+          <a href="/add-expense" class="btn btn-primary btn-sm"><i class="bi bi-plus-circle"></i> Add Expense</a>
+        </div>
+
+        <div id="expenses-empty-state" class="empty-state d-none">
+          <i class="bi bi-receipt"></i>
+          <p>No expenses found. Try adjusting your filters or add a new expense.</p>
+          <a href="/add-expense" class="btn btn-primary">Add Your First Expense</a>
+        </div>
+
+        <div id="expenses-table-wrapper" class="table-responsive">
+          <table class="table table-expenses align-middle">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Payment Method</th>
+                <th>Receipt</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="expenses-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+<script src="{{ url_for('static', filename='js/expenses.js') }}"></script>
+</body>
+</html>

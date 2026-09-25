@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics — Smart Expense Analyzer</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="app-shell">
+  {% set active_page = 'analytics' %}
+  {% include "_sidebar.html" %}
+
+  <div class="main-content">
+    {% set page_title = 'Analytics' %}
+    {% include "_topbar.html" %}
+
+    <div class="page-body">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="fw-bold mb-0">Spending Analytics</h5>
+        <select class="form-select w-auto" id="period-select">
+          <option value="current_month" selected>Current Month</option>
+          <option value="previous_month">Previous Month</option>
+          <option value="last_3_months">Last 3 Months</option>
+          <option value="current_year">Current Year</option>
+        </select>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-label">Total Spending</div>
+            <div class="stat-value" id="an-total">₹0.00</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-label">Avg Daily Spending</div>
+            <div class="stat-value" id="an-avg-daily">₹0.00</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-label">Avg Transaction Value</div>
+            <div class="stat-value" id="an-avg-transaction">₹0.00</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-label">Transactions</div>
+            <div class="stat-value" id="an-transactions">0</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stat-card">
+            <div class="stat-label">Highest Expense</div>
+            <div class="stat-value" id="an-highest">₹0.00</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stat-card">
+            <div class="stat-label">Lowest Expense</div>
+            <div class="stat-value" id="an-lowest">₹0.00</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stat-card">
+            <div class="stat-label">Most Expensive Category</div>
+            <div class="stat-value" id="an-top-category">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h6 class="fw-bold mb-3">Category Breakdown</h6>
+        <div id="category-percentage-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+</body>
+</html>
